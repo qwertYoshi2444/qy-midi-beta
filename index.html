@@ -765,7 +765,13 @@
     <button class="m-edit-btn" id="mbtn-up1">+1</button>
     <button class="m-edit-btn" id="mbtn-down1">-1</button>
 </div>
-
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js').catch(err => console.error(err));
+        });
+    }
+</script>
 <script type="module">
 const __modules = Object.create(null);
 
